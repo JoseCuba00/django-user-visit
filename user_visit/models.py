@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+from main.models import Students
 import datetime
 import hashlib
 import uuid
@@ -65,7 +65,7 @@ class UserVisit(models.Model):
     """
 
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, related_name="user_visits", on_delete=models.CASCADE
+        Students, related_name="user_visits", on_delete=models.CASCADE
     )
     timestamp = models.DateTimeField(
         help_text=_lazy("The time at which the first visit of the day was recorded"),
